@@ -1,0 +1,9 @@
+resource "aws_iam_group" "JustACrush" {
+  name = "JustACrush"
+}
+
+resource "aws_iam_group_membership" "Luella_membership" {
+  name  = aws_iam_user.Luella.name
+  users = [aws_iam_user.Luella.name]
+  group = aws_iam_group.JustACrush.name
+}
